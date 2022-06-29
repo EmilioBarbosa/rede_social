@@ -18,6 +18,8 @@ class PostsController extends Controller
         $Post->conteudo = $request->conteudo;
         $Post->user_name = $User['nome'];
         $Post->save();
+
+       
         return redirect('/home');
     }
 }

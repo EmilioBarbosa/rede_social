@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostsController;
-
+use App\Http\Controllers\AmigoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +33,10 @@ Route::get('/visualizarPerfil', [App\Http\Controllers\ProfileController::class, 
 
 Route::get('/pesquisar', [App\Http\Controllers\ProfileController::class, 'pesquisaPerfil']);
 
-
 Route::post('/enviarPost', [App\Http\Controllers\PostsController::class, 'enviarPost']);
 
+
+Route::post('/adicionarAmigo', [App\Http\Controllers\AmigoController::class, 'adicionarAmigo']);
 
 Auth::routes();
 

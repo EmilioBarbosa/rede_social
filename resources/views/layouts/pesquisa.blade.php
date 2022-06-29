@@ -18,7 +18,9 @@
                     </div>
 
                     <div>
-                        <button class="btn btn-dark">Seguir</button>
+                        <button class="btn btn-dark" 
+                        id="botaoAdicionar"
+                        onclick="adicionarAmigo( '{{$perfil->user_id}}' )">Adicionar</button>
                     </div>
                 </div>
                 <div class="card-body d-flex justify-content-between">
@@ -39,9 +41,6 @@
                                 <p class="m-0">Nascimento:</p>
                                 <p class="ms-2">{{date('d-m-Y', strtotime($perfil['data_nascimento']))}}</p>
                             </div>
-                            <!--       <div class="d-flex">
-                            <label for="exampleFormControlTextarea1" class="form-label me-2">Sobre:</label>
-                            <textarea class="form-control" readonly id="exampleFormControlTextarea1"rows="3" >{{ $perfil['sobre']}}</textarea> -->
                         </div>
                     </div>
                 </div>
@@ -52,4 +51,5 @@
     </div>
 </div>
 </div>
+
 @endsection

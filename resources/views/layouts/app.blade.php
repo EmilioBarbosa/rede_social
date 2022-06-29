@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,6 +31,7 @@
                     </a>
                 </div>
 
+                @if(Auth::user())
                 <form action="/pesquisar" method="get">
                 
                     <div class="input-group col-8">
@@ -40,6 +43,7 @@
                        
                     </div>
                 </form>
+                @endif
                 
                 <div class="col-2"> 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -108,8 +112,10 @@
         </nav>
 
         <main class="py-4">
+     
             @yield('content')
         </main>
     </div>
+    <script src="rede_social/public/js/script.js"></script>
 </body>
 </html>
