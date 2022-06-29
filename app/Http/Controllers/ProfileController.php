@@ -100,4 +100,11 @@ class ProfileController extends Controller
 
         return redirect('/home');
     }
+
+    public function pesquisaPerfil(Request $request){
+        $Profiles = Profile::where('nome', 'LIKE', "%{$request->pesquisa}%")->get();
+
+        return view('layouts.pesquisa', ['Perfil' => $Profiles]);
+
+    }
 }

@@ -21,16 +21,31 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm justify-content-between">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <div class="col-2">
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+                </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form action="/pesquisar" method="get">
+                
+                    <div class="input-group col-8">
+
+                        <input type="text" class="form-control" name="pesquisa" placeholder="Pesquise por um usuário...">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" >Pesquisar</button>
+                        </div>
+                       
+                    </div>
+                </form>
+                
+                <div class="col-2"> 
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
@@ -86,6 +101,9 @@
                         @endguest
                     </ul>
                 </div>
+            </div>
+
+                
             </div>
         </nav>
 

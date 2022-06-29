@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,12 @@ Route::post('/salvarEdicaoPerfil', [App\Http\Controllers\ProfileController::clas
 Route::post('/salvarCriacaoPerfil', [App\Http\Controllers\ProfileController::class, 'salvarPerfil']);
 
 Route::get('/visualizarPerfil', [App\Http\Controllers\ProfileController::class, 'visualizarPerfil']);
+
+Route::get('/pesquisar', [App\Http\Controllers\ProfileController::class, 'pesquisaPerfil']);
+
+
+Route::post('/enviarPost', [App\Http\Controllers\PostsController::class, 'enviarPost']);
+
 
 Auth::routes();
 

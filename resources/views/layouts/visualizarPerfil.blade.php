@@ -26,7 +26,7 @@
                         <div class="col-3">
                             <div>
                                 <label for="staticEmail" class="col-form-label">Data de nascimento:</label>
-                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ $Perfil['data_nascimento']}}">
+                                <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{date('d-m-y', strtotime($Perfil['data_nascimento']))}}">
                             </div>
                             <div>
                                 <label for="staticEmail" class="col-form-label">Sexo:</label>

@@ -34,12 +34,12 @@
                             <span>Sexo:</span>
                             
                             <div class="form-check form-check-inline ms-2">
-                                <input class="form-check-input" name='sexo' type="checkbox" id="inlineCheckbox1" value="F">
+                                <input class="form-check-input" name='sexo' type="checkbox" id="inlineCheckbox1" value="Feminino">
                                 <label class="form-check-label" for="inlineCheckbox1">Feminino</label>
                             </div>
                             
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" name='sexo' type="checkbox" id="inlineCheckbox2" value="M">
+                                <input class="form-check-input" name='sexo' type="checkbox" id="inlineCheckbox2" value="Masculino">
                                 <label class="form-check-label" for="inlineCheckbox2" >Masculino</label>
                             </div>
                            
