@@ -17,7 +17,7 @@ class AmigoController extends Controller
         $Amigo = new Amigo();
         $Amigo->id_solicitante = $solicitante;
         $Amigo->id_solicitado = $solicitado;
-        $Amigo->situacao = 'Pendente';
+        $Amigo->situacao = 'Ativo';
         $Amigo->save();
     }
 

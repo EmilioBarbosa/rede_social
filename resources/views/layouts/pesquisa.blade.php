@@ -8,19 +8,16 @@
                 <div class="card-header">{{ __('Resultado...') }}</div>
             </div>
 
-
             @foreach($Perfil as $perfil)
+
             <div class="card mt-2 shadow-lg">
                 <div class="card-header d-flex justify-content-between">
-
                     <div class="align-self-center">
                         {{$perfil['nome']}}
                     </div>
 
-                    <div>
-                        <button class="btn btn-dark" 
-                        id="botaoAdicionar"
-                        onclick="adicionarAmigo( '{{$perfil->user_id}}' )">Adicionar</button>
+                    <div>                            
+                        <button class="btn btn-dark" id="botaoAdicionar" onclick="adicionarAmigo( '{{$perfil->user_id}}' )">Adicionar</button>                            
                     </div>
                 </div>
                 <div class="card-body d-flex justify-content-between">
@@ -47,7 +44,7 @@
             </div>
             @endforeach
         </div>
-       
+
     </div>
 </div>
 </div>

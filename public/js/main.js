@@ -1,6 +1,10 @@
 function adicionarAmigo(id){ 
     
-     $.ajax({
+    $("#botaoAdicionar").removeClass("btn-dark");
+    $("#botaoAdicionar").addClass("btn-primary");
+    $("#botaoAdicionar").html("Seguindo");
+
+    $.ajax({
         type: 'POST',
         url: '/adicionarAmigo',
         dataType: 'json',
@@ -11,7 +15,7 @@ function adicionarAmigo(id){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         sucess: function(response){
-            
+           
         }
         
     });

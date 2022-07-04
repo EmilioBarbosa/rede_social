@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Amigo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Profile;
@@ -102,9 +103,14 @@ class ProfileController extends Controller
     }
 
     public function pesquisaPerfil(Request $request){
+        $id = Auth::id();
+
         $Profiles = Profile::where('nome', 'LIKE', "%{$request->pesquisa}%")->get();
 
-        return view('layouts.pesquisa', ['Perfil' => $Profiles]);
+        $Amigos = Amigo::where('id_solicitante', '=', $id)->get();
+        
+
+        return view('layouts.pesquisa', ['Perfil' => $Profiles, 'Amigos'=>$Amigos]);
 
     }
 }

@@ -7,6 +7,8 @@ use App\Models\Post;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use PDO;
 
 class HomeController extends Controller
 {
@@ -29,8 +31,15 @@ class HomeController extends Controller
     {
         $id = Auth::id();
 
-        $Posts= Post::orderBy('id', 'DESC')->get();
+        //$Posts= Post::orderBy('id', 'DESC')->get();
         
+        $Posts= DB::select("SELECT * FROM posts as p 
+        LEFT JOIN amigos as a ON a.id_solicitante = {$id} 
+        INNER JOIN users as us ON us.id = p.user_id 
+        WHERE a.id_solicitado = p.user_id OR a.id_solicitante = p.user_id
+        GROUP BY p.id
+        ");   
+            
         $Profiles = Profile::all();
 
         return view('home', ['posts'=>$Posts, 'profiles'=>$Profiles]);
