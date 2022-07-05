@@ -37,7 +37,8 @@ class HomeController extends Controller
         LEFT JOIN amigos as a ON a.id_solicitante = {$id} 
         INNER JOIN users as us ON us.id = p.user_id 
         WHERE a.id_solicitado = p.user_id OR a.id_solicitante = p.user_id
-        
+        GROUP BY p.id
+        ORDER BY p.id DESC
         ");   
             
         $Profiles = Profile::all();
